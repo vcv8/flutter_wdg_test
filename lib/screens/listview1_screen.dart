@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Listview1Screen extends StatelessWidget {
-  final String title;
-
-  const Listview1Screen({
-    super.key,
-    required this.title,
-  });
+  const Listview1Screen({super.key});
 
   final options = const ['Megaman', 'Mario Land', 'Whyrm', 'Kid Icarus'];
 
@@ -14,7 +9,7 @@ class Listview1Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text(title)),
+        title: const Text('ListView Tipo 1'),
       ),
       body: ListView(
         children: <Widget>[

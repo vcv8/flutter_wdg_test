@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Listview2Screen extends StatelessWidget {
-  final String title;
-
-  const Listview2Screen({
-    super.key,
-    required this.title,
-  });
+  const Listview2Screen({super.key});
 
   final options = const [
     'Megaman',
@@ -19,7 +14,7 @@ class Listview2Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text(title)),
+        title: const Text('ListView Tipo 2'),
         elevation: 0,
         backgroundColor: const Color.fromARGB(161, 167, 111, 37),
       ),
@@ -33,7 +28,7 @@ class Listview2Screen extends StatelessWidget {
             color: Colors.black,
           ),
           onTap: () {
-            print(options[index]);
+            // print(options[index]);
           },
         ),
         separatorBuilder: (_, __) => const Divider(),
