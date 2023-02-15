@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_wdg_test/themes/themes.dart';
 
 class CustomCard2 extends StatelessWidget {
-  const CustomCard2({super.key});
+  final String imageUrl;
+  final String? imageFooter;
+
+  const CustomCard2({
+    super.key,
+    required this.imageUrl,
+    this.imageFooter,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,20 +22,20 @@ class CustomCard2 extends StatelessWidget {
       shadowColor: AppTheme.primary.withOpacity(0.45),
       child: Column(
         children: <Widget>[
-          const FadeInImage(
-            placeholder: AssetImage('assets/jar-loading.gif'),
-            image: NetworkImage(
-                'https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2014/10/26/14143477760117.jpg'),
+          FadeInImage(
+            placeholder: const AssetImage('assets/jar-loading.gif'),
+            image: NetworkImage(imageUrl),
             width: double.infinity,
             height: 265,
             fit: BoxFit.cover,
-            fadeInDuration: Duration(milliseconds: 300),
+            fadeInDuration: const Duration(milliseconds: 300),
           ),
-          Container(
-            alignment: AlignmentDirectional.centerEnd,
-            padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10),
-            child: const Text('Cabezera de noticia'),
-          )
+          if (imageFooter != null)
+            Container(
+              alignment: AlignmentDirectional.centerEnd,
+              padding: const EdgeInsets.only(right: 20, top: 10, bottom: 10),
+              child: Text(imageFooter!), // o -> (imageFooter ?? 'Sin título')
+            )
         ],
       ),
     );

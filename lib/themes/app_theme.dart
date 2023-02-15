@@ -19,6 +19,18 @@ class AppTheme {
         // Also works, but not const
       ),
     ),
+    // FloatingActionButtons Theme
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: primary,
+      elevation: 5,
+    ),
+    // ElevatedButtons Theme
+    elevatedButtonTheme: const ElevatedButtonThemeData(
+      style: ButtonStyle(
+          backgroundColor: MaterialStatePropertyAll(primary),
+          elevation: MaterialStatePropertyAll(0),
+          shape: MaterialStatePropertyAll(StadiumBorder())),
+    ),
   );
 
   static final ThemeData darkTheme = ThemeData.dark().copyWith(
