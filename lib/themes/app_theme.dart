@@ -31,6 +31,13 @@ class AppTheme {
           elevation: MaterialStatePropertyAll(0),
           shape: MaterialStatePropertyAll(StadiumBorder())),
     ),
+    // AlertDialog Theme
+    dialogTheme: DialogTheme(
+      elevation: 20,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+    ),
   );
 
   static final ThemeData darkTheme = ThemeData.dark().copyWith(
