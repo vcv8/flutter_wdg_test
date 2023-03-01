@@ -54,6 +54,12 @@ class AppRoutes {
       name: 'Slider & Checks',
       screen: const SliderScreen(),
     ),
+    MenuOption(
+      route: 'lvbuilder',
+      icon: Icons.line_style_outlined,
+      name: 'ListView Builder',
+      screen: const ListViewBuilderScreen(),
+    ),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
